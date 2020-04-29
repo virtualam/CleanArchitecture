@@ -18,15 +18,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{DEFE1593-CC39-46CD-8444-E58BEA6089FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.API", "Services.API\Services.API.csproj", "{28B93665-F50C-4BB7-9568-9B4D76C9ACB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.API", "Services.API\Services.API.csproj", "{28B93665-F50C-4BB7-9568-9B4D76C9ACB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLogger", "AppLogger\AppLogger.csproj", "{6855215E-5FE7-486A-A39F-F2D944AA9AB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogger", "AppLogger\AppLogger.csproj", "{6855215E-5FE7-486A-A39F-F2D944AA9AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrelationFactory", "CorrelationFactory\CorrelationFactory.csproj", "{D59A8AD7-1879-48B7-8239-10072541D0DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrelationFactory", "CorrelationFactory\CorrelationFactory.csproj", "{D59A8AD7-1879-48B7-8239-10072541D0DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{ACF69AB3-432D-459B-AC7F-CCEFABD2F9A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{ACF69AB3-432D-459B-AC7F-CCEFABD2F9A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "WorkerService\WorkerService.csproj", "{535E11F0-0744-4ABE-ACBB-016EA367149B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerService", "WorkerService\WorkerService.csproj", "{535E11F0-0744-4ABE-ACBB-016EA367149B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcpNetCoreApp", "GcpNetCoreApp\GcpNetCoreApp.csproj", "{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcpNetCoreAppSerilog", "GcpNetCoreAppSerilog\GcpNetCoreAppSerilog.csproj", "{A35860B7-5257-4310-A0B5-D34631AA12C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,14 @@ Global
 		{535E11F0-0744-4ABE-ACBB-016EA367149B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535E11F0-0744-4ABE-ACBB-016EA367149B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535E11F0-0744-4ABE-ACBB-016EA367149B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35860B7-5257-4310-A0B5-D34631AA12C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35860B7-5257-4310-A0B5-D34631AA12C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35860B7-5257-4310-A0B5-D34631AA12C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35860B7-5257-4310-A0B5-D34631AA12C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +91,8 @@ Global
 		{D59A8AD7-1879-48B7-8239-10072541D0DD} = {A29E4EAB-D4EF-4CEC-93F7-987E4E3CDA59}
 		{ACF69AB3-432D-459B-AC7F-CCEFABD2F9A4} = {A29E4EAB-D4EF-4CEC-93F7-987E4E3CDA59}
 		{535E11F0-0744-4ABE-ACBB-016EA367149B} = {A29E4EAB-D4EF-4CEC-93F7-987E4E3CDA59}
+		{A2EC5031-1A17-41E9-B7D2-6BBC6BDE2884} = {A29E4EAB-D4EF-4CEC-93F7-987E4E3CDA59}
+		{A35860B7-5257-4310-A0B5-D34631AA12C5} = {A29E4EAB-D4EF-4CEC-93F7-987E4E3CDA59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {149F532C-78F0-4657-8F7A-8B1A7805FD1E}
