@@ -30,11 +30,11 @@ namespace CorrelationFactory
         }
     }
 
-    public class DefaultHttpRequestMessageHandler1 : DelegatingHandler
+    public class DefaultHttpRequestMessageHandlerNonWeb : DelegatingHandler
     {
         private readonly CorrelationIdProvider _correlationIdProvider;
 
-        public DefaultHttpRequestMessageHandler1(CorrelationIdProvider correlationIdProvider)
+        public DefaultHttpRequestMessageHandlerNonWeb(CorrelationIdProvider correlationIdProvider)
         {
             _correlationIdProvider = correlationIdProvider;
         }

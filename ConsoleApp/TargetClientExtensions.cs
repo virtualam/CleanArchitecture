@@ -20,12 +20,12 @@ namespace ConsoleApp
             //    client.BaseAddress = new System.Uri(baseUrls.TargetClient);
             //});
 
-            services.AddTransient<DefaultHttpRequestMessageHandler1>();
+            services.AddTransient<DefaultHttpRequestMessageHandlerNonWeb>();
 
             services.Configure(configure);
 
             services.AddHttpClient("MyClient")
-                .AddHttpMessageHandler<DefaultHttpRequestMessageHandler1>(); 
+                .AddHttpMessageHandler<DefaultHttpRequestMessageHandlerNonWeb>(); 
 
             services.AddSingleton<TargetClient>();
         }
