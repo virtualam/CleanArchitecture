@@ -15,7 +15,7 @@ namespace KafkaConsumer
                 cancellationTokenSource.Cancel();
             };
 
-            var consumerConfig_config = new ConsumerConfig
+            var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
                 GroupId = "mylogs-consumer",
@@ -23,8 +23,10 @@ namespace KafkaConsumer
                 EnableAutoCommit = false
             };
 
-            var kafkaConsumer = new MyKafkaConsumer(consumerConfig_config, "mylogs", cancellationTokenSource.Token);
-            kafkaConsumer.Listen(Console.WriteLine);
+            string topic = "mylogs";
+
+            var kafkaConsumer = new MyKafkaConsumer(config, topic, cancellationTokenSource.Token);
+            kafkaConsumer.Consume(Console.WriteLine);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace KafkaConsumer
             _cancellationToken = cancellationToken;
         }
 
-        public void Listen(Action<string> messageConsumerFtn)
+        public void Consume(Action<string> messageConsumerFtn)
         {
             using (var consumer = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
             {
