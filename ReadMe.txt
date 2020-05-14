@@ -1,4 +1,4 @@
-﻿For windows
+For windows
 
 To start zookeeper
 C:\kafka-2.12>.\bin\windows\zookeeper-server-start.bat .\config\server.properties
