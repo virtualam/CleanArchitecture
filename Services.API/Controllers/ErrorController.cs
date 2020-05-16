@@ -19,6 +19,7 @@ namespace Services.API.Controllers
         }
 
         [Route("/error")]
+        [HttpGet]
         public IActionResult Error([FromServices] IWebHostEnvironment webHostEnvironment)
         {
             var context = HttpContext.Features.Get<IExceptionHandlerFeature>();

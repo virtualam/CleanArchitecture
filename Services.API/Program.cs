@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Services.API
 {
+//#pragma warning disable CS1591
     public class Program
     {
         public async static Task Main(string[] args)
@@ -56,4 +57,5 @@ namespace Services.API
             return hostBuilder;
         }
     }
+//#pragma warning restore CS1591
 }

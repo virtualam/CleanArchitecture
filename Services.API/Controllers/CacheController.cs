@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Services.API.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class CacheController : ControllerBase
     {
@@ -21,7 +23,21 @@ namespace Services.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Gets a stored cache value
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        /// GET /api/[controller]/{key}
+        /// </remarks>
+        /// <param name="key"></param>
+        /// <returns>A stored value if key is found</returns>
+        /// <response code="200">If the key is found</response>
+        /// <response code="404">If the key is not found</response>
         [HttpGet("{key}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetCacheValue([FromRoute] string key)
         {
             _logger.LogInformation("Requested cache key '{@key}'", key);

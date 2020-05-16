@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Services.API</name>
+  </assembly>
+  <members>
+    <member name="M:Services.API.Controllers.CacheController.GetCacheValue(System.String)">
+      <summary>
+        Gets a stored cache value
+      </summary>
+      <remarks>
+        Sample request:
+
+        GET /api/cache/{key}
+      </remarks>
+      <param name="key"></param>
+      <returns>A stored value if key is found</returns>
+      <response code="200">If the key is found</response>
+      <response code="404">If the key is not found</response>
+    </member>
+  </members>
+</doc>

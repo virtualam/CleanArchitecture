@@ -70,7 +70,7 @@ namespace Infrastructure
                     ConnectionMultiplexer.Connect(redisCacheSettings.ConnectionString));
 
                 //Registers Redis Distributed Cache service
-                //services.AddStackExchangeRedisCache(options => options.Configuration = redisCacheSettings.ConnectionString);
+                services.AddStackExchangeRedisCache(options => options.Configuration = redisCacheSettings.ConnectionString);
             }
 
             //services.AddSingleton<IResponseCacheService, ResponseCacheService>();
