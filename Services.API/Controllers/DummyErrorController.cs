@@ -22,13 +22,14 @@ namespace Services.API.Controllers
 
         public IActionResult Get()
         {
-            _logger.LogInformation("Getting requested resource...");
+            _logger.LogTrace("Tracing...");
 
-            _logger.LogDebug("Accessing database...");
+            _logger.LogInformation("Accessing database...");
+
+            _logger.LogDebug("Getting requested resource...");
 
             var obj = new { FirstName = "John", LastName = "Doe", IsActive = true, DateOfBirth = DateTime.Now };
             _logger.LogWarning("Sample warning {@obj}!", obj);
-            _logger.LogError(new Exception("Invalid Id"), "Sample error!");
             try
             {
                 _CreateException();
@@ -38,7 +39,6 @@ namespace Services.API.Controllers
                 _logger.LogError(e, "_CreateException() threw error.");
             }
             _logger.LogCritical(new Exception("Invalid program"), "Sample critical!");
-            _logger.LogTrace("Sample trace!");
 
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
