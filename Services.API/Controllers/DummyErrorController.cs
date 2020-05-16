@@ -22,11 +22,11 @@ namespace Services.API.Controllers
 
         public IActionResult Get()
         {
-            _logger.LogInformation("Getting requested resource");
+            _logger.LogInformation("Getting requested resource...");
 
-            _logger.LogDebug("Entering action...");
+            _logger.LogDebug("Accessing database...");
 
-            var obj = new { P = 1, S = "H", R = true, Z = DateTime.Now };
+            var obj = new { FirstName = "John", LastName = "Doe", IsActive = true, DateOfBirth = DateTime.Now };
             _logger.LogWarning("Sample warning {@obj}!", obj);
             _logger.LogError(new Exception("Invalid Id"), "Sample error!");
             try
