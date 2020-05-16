@@ -40,20 +40,7 @@ namespace Services.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetCacheValue([FromRoute] string key)
         {
-            _logger.LogInformation("Requested cache key '{@key}'", key);
-            var obj = new { P = 1, S = "H", R = true, Z = DateTime.Now };
-            _logger.LogWarning("Sample warning {@obj}!", obj);
-            _logger.LogError(new Exception("Invalid Id"), "Sample error!");
-            try
-            {
-                _CreateException();
-            }
-            catch(Exception e)
-            {
-                _logger.LogError(e, "_CreateException() threw error.");
-            }
-            _logger.LogCritical(new Exception("Invalid program"), "Sample critical!");
-            _logger.LogTrace("Sample trace!");
+            _logger.LogDebug("Requested cache key '{@key}'", key);
 
             var cachedResponse = await _distributedCache.GetStringAsync(key.ToLower());
 
@@ -67,11 +54,6 @@ namespace Services.API.Controllers
                 _logger.LogDebug("Response for cache key '{@key}' not found", key);
                 return (IActionResult)NotFound();
             }
-        }
-
-        private void _CreateException()
-        {
-            throw new Exception("Something has gone haywire!");
         }
 
         [HttpPost]

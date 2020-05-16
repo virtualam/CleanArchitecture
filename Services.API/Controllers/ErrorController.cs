@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Services.API.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class ErrorController : ControllerBase
     {
         private readonly ILogger<ErrorController> _logger;

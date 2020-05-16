@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace Services.API.Controllers
 {
     [ApiController]
     [Route("/")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class HomeController : ControllerBase
     {
         [HttpGet]
