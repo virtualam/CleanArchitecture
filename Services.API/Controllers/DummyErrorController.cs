@@ -8,7 +8,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Services.API.Controllers
 {
-    [Route("api/dummy-error")]
+    [ApiController]
+    [Route("/dummy-error")]
     [ApiExplorerSettings(IgnoreApi = true)]
     public class DummyErrorController : ControllerBase
     {
@@ -19,7 +20,6 @@ namespace Services.API.Controllers
             _logger = logger;
         }
 
-        [NonAction]
         public IActionResult Get()
         {
             _logger.LogInformation("Getting requested resource");

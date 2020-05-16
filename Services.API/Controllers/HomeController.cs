@@ -11,6 +11,7 @@ namespace Services.API.Controllers
 {
     [ApiController]
     [Route("/")]
+    [Route("/index.html")]
     [ApiExplorerSettings(IgnoreApi = true)]
     public class HomeController : ControllerBase
     {

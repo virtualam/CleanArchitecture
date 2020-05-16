@@ -76,6 +76,8 @@ namespace Services.API
                 app.UseExceptionHandler("/error");
             }
 
+            //app.UseFileServer();
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -86,14 +88,14 @@ namespace Services.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Services API V1");
                 //To serve the Swagger UI at the app's root (http://localhost:<port>/), 
                 //set the RoutePrefix property to an empty string:
-                //c.RoutePrefix = string.Empty;
+                //c.RoutePrefix = "";
             });
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             ///app.UseGenericExceptionHandler();
 
