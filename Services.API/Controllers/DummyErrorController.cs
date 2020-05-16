@@ -26,10 +26,10 @@ namespace Services.API.Controllers
 
             _logger.LogInformation("Accessing database...");
 
-            _logger.LogDebug("Getting requested resource...");
-
             var obj = new { FirstName = "John", LastName = "Doe", IsActive = true, DateOfBirth = DateTime.Now };
-            _logger.LogWarning("Sample warning {@obj}!", obj);
+            _logger.LogDebug("Person info = {@obj}!", obj);
+
+            _logger.LogWarning("Database DTU is nearing it's limits...");
             try
             {
                 _CreateException();
@@ -38,7 +38,8 @@ namespace Services.API.Controllers
             {
                 _logger.LogError(e, "_CreateException() threw error.");
             }
-            _logger.LogCritical(new Exception("Invalid program"), "Sample critical!");
+
+            _logger.LogCritical(new Exception("Database access issue"), "Unable to access the cache database");
 
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
