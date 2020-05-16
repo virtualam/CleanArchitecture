@@ -55,6 +55,10 @@ namespace Services.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
 
             app.UseHttpsRedirection();
 
@@ -62,7 +66,7 @@ namespace Services.API
 
             app.UseAuthorization();
 
-            app.UseGenericExceptionHandler();
+            ///app.UseGenericExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {
