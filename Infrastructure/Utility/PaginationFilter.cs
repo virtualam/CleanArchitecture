@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.RepoServices
+namespace Infrastructure.Utility
 {
     public class PaginationFilter : IPaginationFilter
     {

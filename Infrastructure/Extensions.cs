@@ -1,7 +1,7 @@
 ﻿using Domain.Interfaces;
 using Infrastructure.Redis;
-using Infrastructure.RepoServices;
 using Infrastructure.SQL;
+using Infrastructure.Utility;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -76,6 +76,9 @@ namespace Infrastructure
             //services.AddSingleton<IResponseCacheService, ResponseCacheService>();
 
             services.AddTransient<IDbConnectionFactory, Dapper.SqlServer.ConnectionFactory>();
+
+
+
             services.AddTransient<IPaginationFilter, PaginationFilter>();
         }
     }
