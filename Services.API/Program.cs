@@ -35,6 +35,7 @@ namespace Services.API
                 finally
                 {
                     logger.LogInformation("Application is stopping...");
+                    Infrastructure.Extensions.Cleanup();
                     System.Threading.Thread.Sleep(5000);
                 }
             }
